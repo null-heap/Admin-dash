@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.page{
+    height: 100vh;
+}
+
+.page > *{
+    padding: 1rem;
+}
+/* svg icon sizing */
+.midSize{
+    width: 3em;
+    height: 3em;
+}
+.smallSize{
+    
+    width: 2em;
+    height: 2em;
+}
+
+.sidebar .smallSize{
+    /* to make them align with the dashboard icon */
+    margin-left: 0.5em;
+}
+
+.sidebar{
+    display: grid;
+    grid-column: min-content;
+    justify-items: baseline;
+    background-color: #06b6d4;
+    color: #fafaf9;
+    gap: 80px;
+    justify-items: start;
+}
+
+svg{
+    fill: #fafaf9;
+}
+
+.sidebar *{
+    font-size: 1em;
+    font-weight: bold;
+}
+/* to align the items inside the sidebar grid */
+.sidebar > *{ 
+    display: grid;
+    grid-template-columns: min-content min-content;
+    gap: 10px;
+    align-items: center;
+}
+
+.sidebar .side-head span{
+    font-size: 2rem;
+}
+
+
