@@ -9,9 +9,10 @@ body{
 .page{
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 7fr 1fr;
-    grid-template-rows: 1fr 3fr 3fr;
+    grid-template-columns: 1fr 7fr 2fr;
+    grid-template-rows: 1fr min-content 3fr min-content 3fr;
     background-color: #d4d4d8;
+    justify-items: start;
 }
 .page > *{
     padding: 1rem;
@@ -46,6 +47,7 @@ body{
     /* to avoid gaps */
     align-items: start;
     box-shadow: 0px 0px 4px black;
+    width: 100%;
 }
 
 /* header top section */
@@ -123,7 +125,7 @@ button:active{
     gap: 5rem;
     justify-items: start;
     align-content: start;
-    grid-area: 1 / 1 / 4 / 2;
+    grid-area: 1 / 1 / 6 / 2;
 }
 
 svg{
@@ -140,6 +142,19 @@ svg{
 }
 
 
+/* main page */
+#projects{
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#announce{
+   grid-area: 2 / 3 / 3 / 4;
+}
+
+#trend{
+    grid-area: 4 / 3 / 5 / 4;
+}
+/* global classes */
 .center{ 
     display: grid;
     /* made the second column 1fr so the search bar would be dynamic */
