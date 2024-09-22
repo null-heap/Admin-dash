@@ -11,6 +11,7 @@ body{
     height: 100vh;
     grid-template-columns: 1fr 7fr 1fr;
     grid-template-rows: 1fr 3fr 3fr;
+    background-color: #d4d4d8;
 }
 .page > *{
     padding: 1rem;
@@ -20,6 +21,11 @@ body{
     fill: black;
 }
 /* svg icon sizing */
+
+.bigSize{
+    width: 4em;
+    height: 4em;
+}
 .midSize{
     width: 3em;
     height: 3em;
@@ -34,24 +40,27 @@ body{
     grid-area: 1 / 2 / 2 / 4;
     display: grid;
     grid-template-rows: 1fr 1fr;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    background-color: #fafaf9;
+    /* to avoid gaps */
+    align-items: start;
+    box-shadow: 0px 0px 4px black;
 }
 
-.header > *{
-    align-content: center;
-}
+/* header top section */
 .header .header-top{
     grid-row: 1 / 2;
     display: grid;
-    grid-template-columns: 5fr 2fr;
-
-    column-gap: 2em;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    
+    grid-template-columns: 2fr 1fr;
+    column-gap: 2em;    
 }
+
+
 
 input[type="search"]{
     width: 100%;
+    /* by making the second column 1fr and the input vw the sizing is dynami */
     display: block;
     font-family: inherit;
     font-size: 100%;
@@ -66,7 +75,37 @@ input[type="search"]{
     justify-self: end;
     font-weight: bold;
 }
+/* header bottom section */
 
+.header .header-bottom{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+}
+
+.header-bottom h3{
+    margin: 0;
+}
+
+/* the right side of the bottom header */
+
+button{
+    width: 100%;
+    height: 30px;
+    font-family: inherit;
+    font-size: 100%;
+    background-color: #2563eb;
+    border: none;
+    border-radius: 5px;
+    color: #fafaf9;
+}
+button:hover{
+    background-color: #1e40af;
+    cursor: pointer;
+}
+button:active{
+    background-color: #1e3a8a;
+}
 
 
 /* sidebar */
@@ -110,7 +149,7 @@ svg{
     justify-content: start;
 }
 .threeColumn{
-    grid-template-columns: min-content min-content min-content;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
 
