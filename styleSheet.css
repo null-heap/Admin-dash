@@ -6,13 +6,18 @@ body{
 *{
     box-sizing: border-box;
 }
-
 .page{
+    display: grid;
     height: 100vh;
+    grid-template-columns: 1fr 7fr 1fr;
+    grid-template-rows: 1fr 3fr 3fr;
 }
-
 .page > *{
     padding: 1rem;
+}
+
+.fillBlack{
+    fill: black;
 }
 /* svg icon sizing */
 .midSize{
@@ -24,7 +29,47 @@ body{
     width: 2em;
     height: 2em;
 }
+/* header */
+.header{
+    grid-area: 1 / 2 / 2 / 4;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
 
+.header > *{
+    align-content: center;
+}
+.header .header-top{
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+
+    column-gap: 2em;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+}
+
+input[type="search"]{
+    width: 100%;
+    display: block;
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+    height: 30px;
+    background-color: #d4d4d8;
+    border: none;
+    border-radius: 5px;
+    
+}
+.header-top #header-top-user{
+    justify-self: end;
+    font-weight: bold;
+}
+
+
+
+/* sidebar */
 .sidebar .smallSize{
     /* to make them align with the dashboard icon */
     margin-left: 0.5em;
@@ -36,8 +81,10 @@ body{
     justify-items: baseline;
     background-color: #06b6d4;
     color: #fafaf9;
-    gap: 80px;
+    gap: 5rem;
     justify-items: start;
+    align-content: start;
+    grid-area: 1 / 1 / 4 / 2;
 }
 
 svg{
@@ -49,15 +96,27 @@ svg{
     font-weight: bold;
 }
 /* to align the items inside the sidebar grid */
-.sidebar > *{ 
-    display: grid;
-    grid-template-columns: min-content min-content;
-    gap: 10px;
-    align-items: center;
-}
-
 .sidebar .side-head span{
     font-size: 2rem;
+}
+
+
+.center{ 
+    display: grid;
+    /* made the second column 1fr so the search bar would be dynamic */
+    grid-template-columns: min-content 1fr;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: start;
+}
+.threeColumn{
+    grid-template-columns: min-content min-content min-content;
+    gap: 1.5rem;
+}
+
+/* to fix the issue that useing text min-content wraps the text */
+svg + span{
+    white-space: nowrap;
 }
 
 
